@@ -309,8 +309,10 @@ def mask_sentinel_reflectance(image):
 
     valid_mask = scl_to_valid_mask(image)
 
-    return image.updateMask(
-        valid_mask
+    return (
+        image
+        .select(["B4", "B8", "B11"])
+        .updateMask(valid_mask)
     )
 
 
