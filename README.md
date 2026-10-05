@@ -148,6 +148,9 @@ notebooks/
 ├── 05_monthly_composites.ipynb      monthly composites, patches, Kaggle upload
 ├── 06_cnn_training.ipynb            CNN training (run on Kaggle)
 └── 07_final_evaluation.ipynb        combination test, calibration, test evaluation
+scripts/
+└── extract_sentinel.py              standalone Sentinel-2 feature extraction (Notebook 03)
+requirements.txt                     Python dependencies for the local notebooks
 data/                                not versioned (raw, interim, processed)
 ```
 
@@ -155,8 +158,11 @@ data/                                not versioned (raw, interim, processed)
 
 Everything runs on free tools.
 
-- **Python** with pandas, geopandas, numpy, scikit-learn, xgboost, rasterio, matplotlib,
-  earthengine-api and kaggle.
+- **Python** with the packages in `requirements.txt`:
+
+  ```bash
+  pip install -r requirements.txt
+  ```
 - **Google Earth Engine** (free non-commercial project) for ERA5-Land and Sentinel-2.
   Weather and Sentinel feature extraction is slow (days); monthly composites are exported
   as national rasters and cut locally.
@@ -180,3 +186,5 @@ burned area; hourly weather variables; spatial cross-validation to test whether 
 signal generalises to regions without fire history.
 
 ---
+
+*Author: Daniel Fonseca — Data Science, ISCTE-IUL.*

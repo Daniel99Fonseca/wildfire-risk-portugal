@@ -1,0 +1,21 @@
+# Local environment (notebooks 01–05 and 07)
+pandas
+numpy
+pyarrow
+openpyxl
+geopandas
+shapely
+rasterio
+matplotlib
+scipy
+statsmodels
+scikit-learn
+xgboost
+earthengine-api
+kaggle
+jupyter
+
+# Notebook 06 runs on Kaggle, where these are pre-installed:
+# torch
+# torchvision
+# psutil
