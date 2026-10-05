@@ -1,11 +1,72 @@
-data/raw/
-data/interim/
-data/processed/
+# ----------------------------------------------------------------------
+# Data — never versioned (raw, interim and processed data total tens of GB)
+# ----------------------------------------------------------------------
+data/
+!data/.gitkeep
 
+# Large data and model files, wherever they appear
+*.tif
+*.tiff
+*.npy
+*.npz
+*.parquet
+*.xlsx
+*.gpkg
+*.shp
+*.shx
+*.dbf
+*.prj
+*.cpg
+*.zip
+*.pt
+*.pth
+*.ckpt
+
+# ----------------------------------------------------------------------
+# Credentials and secrets
+# ----------------------------------------------------------------------
+kaggle.json
+.kaggle/
+.env
+*.env
+credentials*.json
+service-account*.json
+
+# ----------------------------------------------------------------------
+# Python
+# ----------------------------------------------------------------------
 __pycache__/
-.ipynb_checkpoints/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
 
+# Virtual environments
 .venv/
 venv/
+env/
+.conda/
 
-.env
+# ----------------------------------------------------------------------
+# Jupyter
+# ----------------------------------------------------------------------
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/
+
+# ----------------------------------------------------------------------
+# Editors and operating systems
+# ----------------------------------------------------------------------
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ----------------------------------------------------------------------
+# Logs and temporary files
+# ----------------------------------------------------------------------
+*.log
+*.tmp
+.cache/
