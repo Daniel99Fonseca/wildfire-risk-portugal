@@ -199,5 +199,3 @@ burned area; hourly weather variables; spatial cross-validation to test whether 
 signal generalises to regions without fire history.
 
 ---
-
-*Author: Daniel Fonseca — Data Science, ISCTE-IUL.*
