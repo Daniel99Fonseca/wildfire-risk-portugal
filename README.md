@@ -10,6 +10,12 @@ to a convolutional neural network.
 > did not achieve it. The image contribution replicated on two unseen test years, including
 > after controlling for the ensemble effect.
 
+![Predicted wildfire risk and observed fires](figures/risk_map_week.png)
+
+*Left: predicted probability of at least one new wildfire in the next 7 days, for the most
+active week of 2025 (test period). Right: the 5% of cells flagged by the model that week,
+and the cells where fires actually occurred.*
+
 ---
 
 ## The question
@@ -73,6 +79,8 @@ Raw and processed data are not included in this repository (several tens of GB).
 
 ### Test period (2024–2025), Average Precision
 
+![Average Precision by model on the test period](figures/test_ap_by_model.png)
+
 | Model | AP |
 |---|---:|
 | Prevalence baseline (random) | 0.047 |
@@ -98,6 +106,8 @@ Raw and processed data are not included in this repository (several tens of GB).
 | XGB weather + context → primary model | +0.0085 | [+0.0056, +0.0120] |
 | Climatology → XGB weather + context | +0.0568 | [+0.0430, +0.0715] |
 
+![Precision–Recall curves on the test period](figures/pr_curves_test.png)
+
 ### Operational view
 
 Flagging the **top 5% of cells each week** (191 of 3,822):
@@ -114,6 +124,8 @@ Share of individual fires occurring in a flagged cell, by fire size:
 |---|---:|---:|---:|---:|
 | Climatological baseline | 33.2% | 25.1% | 23.8% | 19.8% |
 | **Primary model** | **37.0%** | **28.7%** | **27.1%** | **23.5%** |
+
+![Share of fires in flagged cells by fire size](figures/large_fire_capture.png)
 
 The model mainly anticipates where fires **start**; whether a fire becomes large depends on
 spread conditions and suppression, which are not modelled.
@@ -148,6 +160,7 @@ notebooks/
 ├── 05_monthly_composites.ipynb      monthly composites, patches, Kaggle upload
 ├── 06_cnn_training.ipynb            CNN training (run on Kaggle)
 └── 07_final_evaluation.ipynb        combination test, calibration, test evaluation
+figures/                             figures used in this README (generated in Notebook 07)
 scripts/
 └── extract_sentinel.py              standalone Sentinel-2 feature extraction (Notebook 03)
 requirements.txt                     Python dependencies for the local notebooks
